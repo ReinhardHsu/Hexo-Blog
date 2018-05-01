@@ -28,8 +28,8 @@ disqus_shortname:
 # Uyan
 uyan_id:
 # Valine
-valine_appid: h4spxrf9innflm3sgvfxhcq8bbk9gpu4fh80aux7gakcioy0
-valine_appkey: natrdexxr65lycvupbglrxtry5xiq0a8bm9a3mx0gw5mrf18
+valine_appid: TWoEQAlGPJwcRhNfqjKsmBUI-gzGzoHsz
+valine_appkey: cuCvIecOqw2bk7bDoReqTDWj
 # jiaThis id
 # if you want to change the style of jiaThis, please go to chage the following file:
 # theme/random/layouts/includes/jiathis.swig
