@@ -27,6 +27,9 @@ baidu_analytics: 9ddaf4c58daefd4b2d98d95e643549b3
 disqus_shortname:
 # Uyan
 uyan_id:
+# Valine
+valine_appid: h4spxrf9innflm3sgvfxhcq8bbk9gpu4fh80aux7gakcioy0
+valine_appkey: natrdexxr65lycvupbglrxtry5xiq0a8bm9a3mx0gw5mrf18
 # jiaThis id
 # if you want to change the style of jiaThis, please go to chage the following file:
 # theme/random/layouts/includes/jiathis.swig

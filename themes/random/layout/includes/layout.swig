@@ -37,6 +37,9 @@
     <div id="content-inner">
       {# {% autoescape false %}{{ body }}{% endautoescape %} #}
       {% block body %}{% endblock %}
+      {% if page.comments && (config.valine_appid || theme.valine_appid) %}
+      <div id="uyan_frame"></div>
+      {% endif %}
       {% if page.comments && (config.uyan_id || theme.uyan_id) %}
       <div id="uyan_frame"></div>
       {% endif %}
@@ -67,6 +70,9 @@
 </div>
 {% if page.comments && (config.disqus_shortname || theme.disqus_shortname) %}
   {% include 'disqus.swig' %}
+{% endif %}
+{% if page.comments && (config.valine_appid || theme.valine_appid) %}
+  {% include 'valine.swig' %}
 {% endif %}
 {% if page.comments && (config.uyan_id || theme.uyan_id) %}
   {% include 'uyan.swig' %}
