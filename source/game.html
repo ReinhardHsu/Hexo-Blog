@@ -1,0 +1,958 @@
+<html>
+
+<head>
+    <title>残酷的世界</title>
+    <link href="https://cdn.bootcss.com/material-design-lite/1.3.0/material.indigo-pink.min.css" rel="stylesheet">
+    
+    <style type="text/css">
+    .axis text {
+        font: 10px sans-serif;
+    }
+
+    .axis path,
+    .axis line {
+        fill: none;
+        stroke: #000;
+        shape-rendering: crispEdges;
+    }
+
+    .mdl-layout__count {
+        background-color: #f3f3f3;
+        min-height: 720px;
+    }
+
+    dialog.mdl-dialog {
+        width: 900px;
+    }
+
+    .mdl-textfield {
+        width: 140px;
+    }
+
+    .game-charts {
+        height: 90%;
+        min-width: 1100px;
+        position: relative;
+    }
+
+    .slogan {
+        font-size: 60px;
+        padding-top: 160px;
+        line-height: 1;
+        color: #767777;
+        font-weight: 500;
+    }
+
+    .sub-slogan {
+        font-size: 21px;
+        padding-top: 24px;
+        line-height: 1;
+        color: #767777;
+        font-weight: 500;
+    }
+
+     ::selection {
+        background-color: #6ab344;
+        color: #fff;
+    }
+
+    .h2_title {
+        margin-bottom: -30px;
+    }
+
+    div.tooltip {	
+	    position: absolute;			
+	    text-align: center;			
+	    width: 120px;					
+	    height: 58px;					
+	    padding: 2px;				
+	    font: 12px sans-serif;		
+	    border: 0px;		
+	    background: rgba(0, 0, 0, 0.8);
+		color: #fff;
+		border-radius: 2px;		
+	    pointer-events: none;			
+	}
+    </style>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+
+<body>
+    <main class="mdl-layout__count">
+        <dialog class="mdl-dialog param_dialog">
+            <h4 class="mdl-dialog__title">设置参数</h4>
+            <div class="mdl-dialog__content">
+                <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
+                    <thead>
+                        <tr>
+                            <th class="mdl-data-table__cell--non-numeric">角色名称</th>
+                            <th class="mdl-data-table__cell--non-numeric">人数占比</th>
+                            <th class="mdl-data-table__cell--non-numeric">初始财富</th>
+                            <th class="mdl-data-table__cell--non-numeric">每日支出系数</th>
+                            <th class="mdl-data-table__cell--non-numeric">获得收入的几率</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="mdl-data-table__cell--non-numeric">
+                                <span class="mdl-list__item-primary-content">
+                                	<i class="material-icons mdl-list__item-icon">person</i>普通人
+                                </span>
+                            </td>
+                            <td class="mdl-data-table__cell--non-numeric">
+                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                    <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="ordinary_in_total_pct" value="0.75">
+                                    <label class="mdl-textfield__label" for="ordinary_in_total_pct">人数占比(0.75)...</label>
+                                    <span class="mdl-textfield__error">请输入数字!</span>
+                                </div>
+                            </td>
+                            <td class="mdl-data-table__cell--non-numeric">
+                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                    <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="ordinary_initial_assets" value="100">
+                                    <label class="mdl-textfield__label" for="ordinary_initial_assets">初始财富(100)...</label>
+                                    <span class="mdl-textfield__error">请输入数字!</span>
+                                </div>
+                            </td>
+                            <td class="mdl-data-table__cell--non-numeric">
+                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                    <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="ordinary_out_factor" value="1">
+                                    <label class="mdl-textfield__label" for="ordinary_out_factor">每日支出系数(1)...</label>
+                                    <span class="mdl-textfield__error">请输入数字!</span>
+                                </div>
+                            </td>
+                            <td class="mdl-data-table__cell--non-numeric">
+                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                    <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="ordinary_in_factor" value="1">
+                                    <label class="mdl-textfield__label" for="ordinary_in_factor">获得收入的几率(1)...</label>
+                                    <span class="mdl-textfield__error">请输入数字!</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="mdl-data-table__cell--non-numeric">
+                                <span class="mdl-list__item-primary-content">
+                                	<i class="material-icons mdl-list__item-icon">person</i>富二代
+								</span>
+                            </td>
+                            <td class="mdl-data-table__cell--non-numeric">
+                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                    <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="rich_in_total_pct" value="0.1">
+                                    <label class="mdl-textfield__label" for="rich_in_total_pct">人数占比(0.1)...</label>
+                                    <span class="mdl-textfield__error">请输入数字!</span>
+                                </div>
+                            </td>
+                            <td class="mdl-data-table__cell--non-numeric">
+                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                    <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="rich_initial_assets" value="200">
+                                    <label class="mdl-textfield__label" for="rich_initial_assets">初始财富(200)...</label>
+                                    <span class="mdl-textfield__error">请输入数字!</span>
+                                </div>
+                            </td>
+                            <td class="mdl-data-table__cell--non-numeric">
+                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                    <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="rich_out_factor" value="1.1">
+                                    <label class="mdl-textfield__label" for="rich_out_factor">是普通人的多少倍(1.1)...</label>
+                                    <span class="mdl-textfield__error">请输入数字!</span>
+                                </div>
+                            </td>
+                            <td class="mdl-data-table__cell--non-numeric">
+                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                    <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="rich_in_factor" value="1">
+                                    <label class="mdl-textfield__label" for="rich_in_factor">是普通人的多少倍(1)...</label>
+                                    <span class="mdl-textfield__error">请输入数字!</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="mdl-data-table__cell--non-numeric">
+                                <span class="mdl-list__item-primary-content">
+                                	<i class="material-icons mdl-list__item-icon">person</i>努力的普通人
+							</span>
+                            </td>
+                            <td class="mdl-data-table__cell--non-numeric">
+                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                    <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="hard_work_in_total_pct" value="0.1">
+                                    <label class="mdl-textfield__label" for="hard_work_in_total_pct">人数占比(0.1)...</label>
+                                    <span class="mdl-textfield__error">请输入数字!</span>
+                                </div>
+                            </td>
+                            <td class="mdl-data-table__cell--non-numeric">
+                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                    <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="hard_work_initial_assets" value="100">
+                                    <label class="mdl-textfield__label" for="hard_work_initial_assets">初始财富(100)...</label>
+                                    <span class="mdl-textfield__error">请输入数字!</span>
+                                </div>
+                            </td>
+                            <td class="mdl-data-table__cell--non-numeric">
+                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                    <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="hard_work_out_factor" value="1.1">
+                                    <label class="mdl-textfield__label" for="hard_work_out_factor">是普通人的多少倍(1.1)...</label>
+                                    <span class="mdl-textfield__error">请输入数字!</span>
+                                </div>
+                            </td>
+                            <td class="mdl-data-table__cell--non-numeric">
+                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                    <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="hard_work_in_factor" value="1">
+                                    <label class="mdl-textfield__label" for="hard_work_in_factor">是普通人的多少倍(1)...</label>
+                                    <span class="mdl-textfield__error">请输入数字!</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="mdl-data-table__cell--non-numeric">
+                                <span class="mdl-list__item-primary-content">
+                                	<i class="material-icons mdl-list__item-icon">person</i>有钱又努力的人
+							</span>
+                            </td>
+                            <td class="mdl-data-table__cell--non-numeric">
+                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                    <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="rich_and_hard_work_in_total_pct" value="0.05">
+                                    <label class="mdl-textfield__label" for="rich_and_hard_work_in_total_pct">人数占比(0.05)...</label>
+                                    <span class="mdl-textfield__error">请输入数字!</span>
+                                </div>
+                            </td>
+                            <td class="mdl-data-table__cell--non-numeric">
+                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                    <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="rich_and_hard_work_initial_assets" value="200">
+                                    <label class="mdl-textfield__label" for="rich_and_hard_work_initial_assets">初始财富(200)...</label>
+                                    <span class="mdl-textfield__error">请输入数字!</span>
+                                </div>
+                            </td>
+                            <td class="mdl-data-table__cell--non-numeric">
+                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                    <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="rich_and_hard_work_out_factor" value="1.21">
+                                    <label class="mdl-textfield__label" for="rich_and_hard_work_out_factor">是普通人的多少倍(1.21)...</label>
+                                    <span class="mdl-textfield__error">请输入数字!</span>
+                                </div>
+                            </td>
+                            <td class="mdl-data-table__cell--non-numeric">
+                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                    <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="rich_and_hard_work_in_factor" value="1">
+                                    <label class="mdl-textfield__label" for="rich_and_hard_work_in_factor">是普通人的多少倍(1)...</label>
+                                    <span class="mdl-textfield__error">请输入数字!</span>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="mdl-dialog__actions">
+                <button type="button" class="mdl-button agree">确定,并重新开始游戏</button>
+                <button type="button" class="mdl-button close">取消</button>
+            </div>
+        </dialog>
+        <dialog class="mdl-dialog param_check_dialog">
+            <h4 class="mdl-dialog__title">参数设置有误</h4>
+            <div class="mdl-dialog__content">
+                <p>请重新检查参数</p>
+            </div>
+            <div class="mdl-dialog__actions">
+                <button type="button" class="mdl-button param_check_agree">确定</button>
+            </div>
+        </dialog>
+        <div class="mdl-grid param_controls" style="visibility: hidden;">
+            <div class="mdl-cell mdl-cell--3-col">
+                <label class="mdl-switch" for="per_game_pay_coins">
+                    <input id="per_game_pay_coins" class="mdl-slider mdl-js-slider" type="range" min="0" max="100" value="1" tabindex="0">
+                    <span id="txt_per_game_pay_coins" class="mdl-switch__label">每天要支付 1 块</span>
+                </label>
+            </div>
+            <div class="mdl-cell mdl-cell--3-col">
+                <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="is_allow_negative_assets">
+                    <input id="is_allow_negative_assets" type="checkbox" class="mdl-switch__input">
+                    <span id="txt_is_allow_negative_assets" class="mdl-switch__label">不允许负债</span>
+                </label>
+            </div>
+            <div class="mdl-cell mdl-cell--3-col">
+                <button id="show-dialog" type="button" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">更多参数</button>
+            </div>
+            <div class="mdl-cell mdl-cell--3-col">
+                <button id="btn_play" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+                    暂停
+                </button>
+            </div>
+        </div>
+        <div class="mdl-grid">
+            <div class="game-charts mdl-color--white mdl-shadow--2dp mdl-typography--text-center mdl-cell mdl-cell--12-col">
+                <h2 class="h2_title">残酷的世界</h2>
+                <div class="slogan">房间内有 100 个人,</div>
+                <div class="sub-slogan"></div>
+            </div>
+        </div>
+    </main>
+    <script src="https://cdn.bootcss.com/d3/3.5.17/d3.min.js"></script>
+    <script src="https://cdn.bootcss.com/material-design-lite/1.3.0/material.min.js"></script>
+    <script type="text/javascript">
+    var margin = 75,
+        width = 1100 - margin * 2,
+        height = 500 - margin * 2;
+
+    var slogan_text = [
+        "房间内有 100 个人,",
+        "每人有 100 块,",
+        "每天随机给另一个人 1 块,",
+        "最终财富分布会是怎样的？"
+    ];
+
+    //玩家
+    var gamer = [];
+    //角色
+    var roles = ["普通人", "富二代", "努力的普通人", "努力的富二代"];
+    var role_color = ["#8CC8C9", "#EA6C82", "#F5BB74", '#84A828'];
+    //各角色的占比
+    var role_in_total_pct = [
+        1,
+        0.0,
+        0.0,
+        0.0
+    ];
+    //各角色每日支出系数
+    var role_out_factor = [
+        1,
+        2,
+        1,
+        2
+    ];
+    //各角色获得收入的几率
+    var role_in_factor = [
+        1,
+        2,
+        1.01,
+        2.02
+    ];
+    //各角色的初始资产
+    var initial_assets = [
+        100,
+        500,
+        100,
+        500
+    ];
+    //总人数
+    var total_count = 100;
+    //允许负债
+    var allow_negative_assets = false;
+    //游戏次数
+    var days_of_years = 365;
+    var start_age = 18;
+    var end_age = 65;
+    var game_times = (end_age - start_age) * days_of_years;
+    //每轮游戏要支付的钱数
+    var per_game_pay_coins = 1;
+    // 玩家财富的标准差
+    var gamer_std = [];
+    // 是否播放动画
+    var is_paly = true;
+    // 调整完参数后，重新开始游戏
+    var is_restart = false;
+
+
+
+    //初始化玩家
+    function initial_gamer() {
+        gamer_std = [];
+        gamer = [];
+        for (var i = roles.length - 1; i >= 0; i--) {
+            //角色人数
+            role_count = parseInt(total_count * role_in_total_pct[i]);
+
+            for (var j = role_count - 1; j >= 0; j--) {
+                gamer.push({
+                    role: roles[i],
+                    out_factor: role_out_factor[i],
+                    in_factor: role_in_factor[i],
+                    assets: initial_assets[i]
+                });
+            }
+        }
+    };
+
+    // 在一个区间范围内，产生一个随机数
+    var rand = function(min, max) {
+        return Math.random() * (max - min) + min;
+    };
+    
+    debugger;
+    // 根据权重产生随机数
+    var getRandomItem = function(gamer) {
+        var total_weight = d3.sum(gamer,function(d){
+            return d.in_factor;
+        });
+         
+        var random_num = rand(0, total_weight);
+        var weight_sum = 0;
+         
+        for (var i = 0; i < gamer.length; i++) {
+            weight_sum += gamer[i].in_factor;
+            weight_sum = +weight_sum.toFixed(2);
+             
+            if (random_num <= weight_sum) {
+                return i;
+            }
+        }
+         
+        // end of function
+    };
+
+    //玩游戏
+    function play_game() {
+        var game_round = game_times - 1;
+
+        var round_interval = setInterval(function() {
+
+            if (is_restart) {
+                is_restart = false;
+                game_round = game_times - 1;
+            }
+
+            if (is_paly) {
+                if (game_round >= 0) {
+
+                    for (var gamer_index = gamer.length - 1; gamer_index >= 0; gamer_index--) {
+
+                        //本轮游戏中，要给钱的玩家
+                        var pay_person = gamer[gamer_index];
+
+                        //如果玩家破产了,并且不允许负资产
+                        //那么他在该本轮游戏中不用支付给任何人，但是可以收钱
+                        if (pay_person.assets <= 0 && allow_negative_assets == false) {
+                            //continue;
+                        } else {
+
+                            //本轮游戏中,要收钱的那个玩家的索引
+                            var receiver_gamer_index = gamer_index;
+                            while (receiver_gamer_index == gamer_index) {
+                                receiver_gamer_index = getRandomItem(gamer); //parseInt(Math.random() * total_count);
+                            }
+
+                            //debugger;
+                            //本轮游戏中，要收钱的玩家
+                            var receive_person = gamer[receiver_gamer_index]
+
+                            //本轮游戏中，应该支付的钱数
+                            var factor = pay_person.out_factor;//Math.max(pay_person.factor, receive_person.factor);
+                            var payable_coins = factor * per_game_pay_coins;
+
+                            //本轮游戏中，实际支付的钱数
+                            var actual_coins = payable_coins;
+                            //当玩家的资产不足以支付应付钱数时
+                            //如果允许负资产，则以应付钱数支付
+                            //否则，以用户剩余资产支付
+                            if (pay_person.assets < payable_coins) {
+                                actual_coins = allow_negative_assets ? payable_coins : pay_person.assets;
+                            }
+
+                            //玩家之间按照实际支付钱数进行转账
+                            pay_person.assets = pay_person.assets - actual_coins;
+                            receive_person.assets = receive_person.assets + actual_coins;
+                        }
+                    }
+
+                    //整年的时候，更新视图
+                    if (game_round % days_of_years == 0) {
+                        var ages = (end_age - game_round / days_of_years);
+                        update(gamer, ages);
+                        d3.selectAll('h2').text("残酷的世界 " + ages + "岁时");
+                    }
+                    game_round--;
+                } else {
+                    // clearInterval(round_interval);
+                    d3.select("#btn_play")
+                        .text("重新开始");
+                }
+            }
+        }, 0.01);
+    };
+
+    //绘制函数，初始化我们的图形
+    function draw(data) {
+
+        "use strict";
+        //创建画布
+        d3.selectAll(".game-charts svg").remove();
+
+        var svg = d3.select(".game-charts")
+            .append("svg")
+            .attr("width", width + margin * 2)
+            .attr("height", height + margin * 2)
+            .append('g')
+            .attr('transform', 'translate(' + margin + ',' + margin + ')')
+            .attr('class', 'map');
+
+
+        d3.selectAll('rect').remove();
+        d3.selectAll('.axis').remove();
+
+        //获取y轴最大值最小值
+        var y_extent = d3.extent(data, function(d) {
+            return d.assets;
+        });
+
+        //调整y轴的最小值
+        var y_begin_from = d3.min(y_extent) > 0 ? 0 : d3.min(y_extent);
+
+        //创建线性刻度，输入定义域和值域
+        var y = d3.scale.linear()
+            .domain([y_begin_from, d3.max(y_extent) + 10])
+            .range([height, 0]);
+
+        //设置轴的属性
+        var y_axis = d3.svg.axis()
+            .scale(y)
+            .orient('left')
+            .ticks(10);
+
+        //将y轴添加到视图
+        svg.append('g')
+            .attr('class', 'y axis')
+            .attr('transform', 'translate(30,0)')
+            .call(y_axis);
+
+        //为y轴添加文本说明
+        svg.append('text')
+            .attr('transform', 'translate(-10,' + (height / 2) + ')rotate(-90)')
+            .attr('text-anchor', 'middle')
+            .text('资产');
+
+        //为玩家财富的标准差std_y添加右y轴
+        gamer_std.push({
+            "x": 18,
+            "y": d3.deviation(data.map(function(d) {
+                return d.assets;
+            }))
+        });
+
+        var std_y_extent = d3.extent(gamer_std, function(d) {
+            return d.y;
+        });
+        var std_y = d3.scale.linear()
+            .domain([0, d3.max(std_y_extent) + 10])
+            .range([height, 0]);
+
+        var std_y_axis = d3.svg.axis()
+            .scale(std_y)
+            .orient('right');
+
+        svg.append('g')
+            .attr('class', 'std_y axis')
+            .attr('transform', 'translate(' + (width + 10) + ',0)')
+            .call(std_y_axis);
+
+        svg.append('text')
+            .attr('transform', 'translate(' + (width + 40) + ',' + (height / 2) + ')rotate(90)')
+            .attr('text-anchor', 'middle')
+            .text('人与人之间的资产差距(标准差)');
+
+        //使用玩家的索引，定义x轴，
+        var x = d3.scale.ordinal()
+            .domain(d3.range(0, data.length))
+            .rangeBands([60, width]);
+
+        var x_axis = d3.svg.axis()
+            .scale(x)
+            .orient('bottom');
+
+        var x_axis_height = d3.min(y_extent) < 0 ? y(0) : height;
+
+        svg.append('g')
+            .attr('class', 'x axis')
+            .attr('transform', 'translate(0,' + x_axis_height + ')')
+            .call(x_axis)
+            .text('');
+
+        //使用时间，为标准差定义x轴
+        var std_x = d3.scale.linear()
+            .domain([start_age, end_age])
+            .range([60, width]);
+
+        var std_x_axis = d3.svg.axis()
+            .scale(std_x)
+            .orient('top');
+        svg.append('g')
+            .attr('class', 'std_x axis')
+            .attr('transform', 'translate(0,0)')
+            .call(std_x_axis);
+
+        svg.append('text')
+            .attr('transform', 'translate(' + (width / 2) + ',-20)')
+            .attr('text-anchor', 'middle')
+            .text('年龄');
+
+        var tooltip = d3.selectAll("body")
+        	.append("div")	
+		    .attr("class", "tooltip")				
+		    .style("opacity", 0);
+
+
+        //添加条形图
+        var bar = svg.selectAll('.bar')
+            .data(data.sort(function(a, b) {
+                return a.assets - b.assets;
+            }))
+            .enter()
+            .append('rect')
+            .attr('class', 'bar')
+            .attr('x', function(d, i) {
+                return x(i);
+            })
+            .attr('y', function(d) {
+                return y(d.assets);
+            })
+            .attr('height', function(d) {
+                return height - y(d.assets)
+            })
+            .attr('width', 6)
+            .attr('fill', function(d) {
+                return get_color(d.role);
+            })
+            .on("mouseover", function(d,i) {		
+	            tooltip.transition()		
+	                .duration(200)		
+	                .style("opacity", .9);		
+	            tooltip	.html("<strong>"+d.role+"</strong><br/>编号:"+(i+1)+"<br/>资产:" + d.assets.toFixed(2) )	
+	                .style("left", (d3.event.layerX) + "px")		
+	                .style("top", (d3.event.layerY - 28) + "px");	
+            })					
+	        .on("mouseout", function(d) {		
+	            tooltip.transition()		
+	                .duration(500)		
+	                .style("opacity", 0);	
+	        });
+
+        //为标准差定义线性函数，输入数据，输出屏幕的像素位置
+        var lineFunction = d3.svg.line()
+            .x(function(d) { return std_x(d.x); })
+            .y(function(d) { return std_y(d.y); })
+            .interpolate("linear");
+
+        //定义线图
+        var lineGraph = svg
+            .append("path")
+            .transition()
+            .duration(900)
+            .attr("d", lineFunction(gamer_std))
+            .attr("stroke", "blue")
+            .attr("stroke-width", 2)
+            .attr("fill", "none")
+            .attr('transform', 'translate(-30,0)')
+            .attr('class', 'line')
+            /*.on("mouseover", function(d) {		
+	            tooltip.transition()		
+	                .duration(200)		
+	                .style("opacity", .9);		
+	            tooltip	.html("年龄:<strong>"+d.x+"</strong><br/>标准差:"+d.y.toFixed(2) )	
+	                .style("left", (d3.event.layerX) + "px")		
+	                .style("top", (d3.event.layerY - 28) + "px");	
+            })					
+	        .on("mouseout", function(d) {		
+	            tooltip.transition()		
+	                .duration(500)		
+	                .style("opacity", 0);	
+	        })*/
+	        ;
+
+        //为不同的角色添加图例
+        var legend = svg.selectAll('.legend')
+            //.data(roles)
+            .data(d3.map(data,function(d){return d.role;}).keys())
+            .enter()
+            .append('g')
+            .attr("class", "legend")
+            .attr("transform", function(d, i) {
+                return 'translate(60,' + i * 20 + ')';
+            })
+            .style("font-size", "12px");
+        legend.append('rect')
+            .attr('width', 20)
+            .attr('height', 20)
+            .attr('fill', get_color);
+
+        legend.append('text')
+            .attr('x', 20)
+            .attr('y', 20)
+            .attr('transform', 'translate(10,-5)')
+            .text(function(d) {
+                return d;
+            });
+    };
+
+    //随游戏进行，对视图进行更新
+    function update(data, ages) {
+        var y_extent = d3.extent(data, function(d) {
+            return d.assets;
+        });
+        var y_begin_from = d3.min(y_extent) > 0 ? 0 : d3.min(y_extent);
+        var y = d3.scale.linear()
+            .domain([y_begin_from, d3.max(y_extent) + 10])
+            .range([height, 0]);
+
+        var y_axis = d3.svg.axis()
+            .scale(y)
+            .orient('left');
+
+        d3.selectAll('.y.axis')
+            .call(y_axis);
+
+        var x = d3.scale.ordinal()
+            .domain(d3.range(0, data.length))
+            .rangeBands([60, width]);
+
+        var x_axis = d3.svg.axis()
+            .scale(x)
+            .orient('bottom');
+
+        var x_axis_height = d3.min(y_extent) < 0 ? y(0) : height;
+
+        d3.selectAll('.x.axis')
+            //.attr('transform','translate(40,'+x_axis_height+')')
+            .call(x_axis)
+            .text('');
+
+        var std_x = d3.scale.linear()
+            .domain([start_age, end_age])
+            .range([60, width]);
+
+        gamer_std.push({
+            "x": ages,
+            "y": d3.deviation(data.map(function(d) {
+                return d.assets;
+            }))
+        });
+
+        var std_y_extent = d3.extent(gamer_std, function(d) {
+            return d.y;
+        });
+        var std_y = d3.scale.linear()
+            .domain([0, d3.max(std_y_extent) + 10])
+            .range([height, 0]);
+
+        var std_y_axis = d3.svg.axis()
+            .scale(std_y)
+            .orient('right');
+
+        d3.selectAll('.std_y.axis')
+            .call(std_y_axis);
+
+        var bar = d3.selectAll('.bar')
+            .data(data.sort(function(a, b) {
+                return a.assets - b.assets;
+            }))
+            .transition()
+            .duration(900)
+            .attr('class', 'bar')
+            .attr('x', function(d, i) {
+                return x(i);
+            })
+            .attr('y', function(d) {
+                return y(d.assets);
+            })
+            .attr('height', function(d) {
+                return Math.abs(y(0) - y(d.assets) + 1);
+            })
+            .attr('width', 6)
+            .attr('transform', function(d) {
+                if (d.assets < 0) {
+                    return 'translate(0,' + (y(0) - y(d.assets)) + ')';
+                } else {
+                    return 'translate(0,0)';
+                }
+            })
+            .attr('fill', function(d) {
+                return get_color(d.role);
+            });
+
+
+        var lineFunction = d3.svg.line()
+            .x(function(d) { return std_x(d.x); })
+            .y(function(d) { return std_y(d.y); })
+            .interpolate("linear");
+
+        //The line SVG Path we draw
+        d3.selectAll("path.line").remove();
+        var lineGraph = d3.select('.map')
+            .append("path")
+            //.transition()
+            //.duration(900)
+            .attr("d", lineFunction(gamer_std))
+            .attr("stroke", "#456E9C")
+            .attr("stroke-width", 2)
+            .attr("fill", "none")
+            //.attr('transform','translate(-30,0)')
+            .attr('class', 'line');
+
+    };
+
+    //不同角色的图例颜色
+    function get_color(role) {
+        var i = roles.indexOf(role);
+        return role_color[i];
+    }
+
+    //作者驱动叙事的文本
+    function play_text() {
+        var text_index = 1;
+        var text_interval = setInterval(function() {
+            if (text_index < slogan_text.length) {
+
+                d3.select('.slogan')
+                    .transition()
+                    .duration(2000)
+                    .text(slogan_text[text_index]);
+
+                if (text_index - 1 > 0) {
+                    d3.select('.sub-slogan')
+                        .transition()
+                        .duration(2000)
+                        .text(slogan_text[text_index - 1]);
+                }
+
+                text_index++;
+            } else {
+                clearInterval(text_interval);
+
+                d3.select('.slogan').remove()
+                d3.select('.sub-slogan').remove();
+
+                //播放完文本，正式开始游戏
+                d3.select(".param_controls").attr('style','');
+                draw(gamer);                
+                play_game();
+            }
+
+        }, 5000);
+    }
+
+    //初始化玩家角色
+    initial_gamer();
+
+    //播放作者驱动叙事文本
+    play_text();
+
+    //参数检查对话框
+    var param_check_dialog = document.querySelector('dialog.param_check_dialog');
+    param_check_dialog.querySelector('.param_check_agree').addEventListener('click', function() {
+        param_check_dialog.close();
+    });
+
+    //定义参数对话框，用户更改参数后，即时反应到游戏当中
+    var dialog = document.querySelector('dialog.param_dialog');
+    var showDialogButton = document.querySelector('#show-dialog');
+    if (!dialog.showModal) {
+        dialogPolyfill.registerDialog(dialog);
+    }
+
+    showDialogButton.addEventListener('click', function() {
+        d3.select("#ordinary_in_total_pct").property('value',role_in_total_pct[0]);
+        d3.select("#rich_in_total_pct").property('value',role_in_total_pct[1]);
+        d3.select("#hard_work_in_total_pct").property('value',role_in_total_pct[2]);
+        d3.select("#rich_and_hard_work_in_total_pct").property('value',role_in_total_pct[3]);
+
+        d3.select("#ordinary_in_factor").property('value',role_in_factor[0]);
+        d3.select("#rich_in_factor").property('value',role_in_factor[1]);
+        d3.select("#hard_work_in_factor").property('value',role_in_factor[2]);
+        d3.select("#rich_and_hard_work_in_factor").property('value',role_in_factor[3]);
+
+        d3.select("#ordinary_out_factor").property('value',role_out_factor[0]);
+        d3.select("#rich_out_factor").property('value',role_out_factor[1]);
+        d3.select("#hard_work_out_factor").property('value',role_out_factor[2]);
+        d3.select("#rich_and_hard_work_out_factor").property('value',role_out_factor[3]);
+
+        d3.select("#ordinary_initial_assets").property('value',initial_assets[0]);
+        d3.select("#rich_initial_assets").property('value',initial_assets[1]);
+        d3.select("#hard_work_initial_assets").property('value',initial_assets[2]);
+        d3.select("#rich_and_hard_work_initial_assets").property('value',initial_assets[3]);
+
+        dialog.showModal();
+    });
+    dialog.querySelector('dialog.param_dialog .close').addEventListener('click', function() {
+        debugger
+        dialog.close();
+    });
+    dialog.querySelector('dialog.param_dialog .agree').addEventListener('click', function() {
+        var temp_role_in_total_pct= [
+            +d3.select("#ordinary_in_total_pct").property('value'), 
+            +d3.select("#rich_in_total_pct").property('value'), 
+            +d3.select("#hard_work_in_total_pct").property('value'), 
+            +d3.select("#rich_and_hard_work_in_total_pct").property('value'), 
+        ];
+        if(d3.sum(temp_role_in_total_pct,function(d){
+            return d;
+        })!=1){
+            param_check_dialog.querySelector('p').textContent="各角色占比合计不等于1，请修改后重试。";
+            param_check_dialog.showModal();
+        }else{
+
+            role_in_total_pct = temp_role_in_total_pct;
+            role_in_factor = [
+    	        +d3.select("#ordinary_in_factor").property('value'), 
+    	        +d3.select("#rich_in_factor").property('value'), 
+    	        +d3.select("#hard_work_in_factor").property('value'), 
+    	        +d3.select("#rich_and_hard_work_in_factor").property('value'), 
+            ];
+            role_out_factor = [
+                +d3.select("#ordinary_out_factor").property('value'), 
+                +d3.select("#rich_out_factor").property('value'), 
+                +d3.select("#hard_work_out_factor").property('value'), 
+                +d3.select("#rich_and_hard_work_out_factor").property('value'), 
+            ];
+            initial_assets = [
+    	        +d3.select("#ordinary_initial_assets").property('value'), 
+    	        +d3.select("#rich_initial_assets").property('value'), 
+    	        +d3.select("#hard_work_initial_assets").property('value'), 
+    	        +d3.select("#rich_and_hard_work_initial_assets").property('value'), 
+            ];
+            debugger;
+            is_restart = true;
+            initial_gamer();
+            draw(gamer);
+            dialog.close();
+        }
+    });
+
+    //播放和暂停按钮
+    var btn_play = document.querySelector('#btn_play').addEventListener('click', function() {
+        debugger;
+        if(this.textContent=="重新开始"){
+            is_paly=true;
+            is_restart = true;
+            this.textContent = is_paly ? "暂停" : "继续";
+            initial_gamer();
+        }else{
+            is_paly = !is_paly;
+            this.textContent = is_paly ? "暂停" : "继续";
+        }
+    });
+
+    //允许负债的checkbox
+    d3.select("#is_allow_negative_assets").on("change", function() {
+        debugger;
+        allow_negative_assets = this.checked;
+        d3.select("#txt_is_allow_negative_assets")
+        	.text(allow_negative_assets ? "允许负债" : "不允许负债");
+    });
+
+    //每轮游戏要支付的金额slider
+    d3.select("#per_game_pay_coins").on("change", function() {
+        debugger;
+        per_game_pay_coins = +this.value;
+        d3.select("#txt_per_game_pay_coins")
+        	.text("每天要支付 " + per_game_pay_coins + " 块");
+    });
+    </script>
+	<script type='text/javascript'>
+      var _vds = _vds || [];
+      window._vds = _vds;
+      (function(){
+        _vds.push(['setAccountId', '9767bfe4b3982b67']);
+        (function() {
+          var vds = document.createElement('script');
+          vds.type='text/javascript';
+          vds.async = true;
+          vds.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'dn-growing.qbox.me/vds.js';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(vds, s);
+        })();
+      })();
+  </script>
+</body>
+
+</html>
