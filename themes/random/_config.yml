@@ -4,23 +4,25 @@ language: en
 
 # main menu navigation
 menu:
-  Home: /
+  Home: http://reinhardhsu.com
+  Blog: http://www.cnblogs.com/msdynax
   Archives: archives
   Tags: tags
   Categories: categories
   About: about
 
 social:
-  GitHub: https://github.com/stiekel/hexo-theme-random
-  Coding.NET: https://coding.net/u/Stiekel
-  Twitter: https://twitter.com/SidCN
-  Weibo: http://weibo.com/sidcn
-  DouBan: http://www.douban.com/people/Stiekel/
+  GitHub: https://github.com/ReinhardHsu
+  Twitter: https://twitter.com/ReinhardHsu
+  Facebook: https://www.facebook.com/reinhardhsu
+  DouBan: https://www.douban.com/people/Reinhaid
+  Zhihu: https://www.zhihu.com/people/reinhardhsu
+  LinkedIn: https://www.linkedin.com/in/ReinhardHsu
 
 # Google analytics
 google_analytics:
 # Baidu tongji
-baidu_analytics:
+baidu_analytics: 9ddaf4c58daefd4b2d98d95e643549b3
 # Disqus
 disqus_shortname:
 # Uyan
@@ -77,7 +79,7 @@ turnoffBackgroundImage:
   # post and page
   post: false
 # when you turn off backgrounds, you can set a background color.
-backgroundColor: 34495E
+backgroundColor: D7CCC8
  
 backgroundImages:
 # - http://7te9fe.com1.z0.glb.clouddn.com/bgimg_1.jpg?imageView2/1/w/__width__/h/__height__
@@ -110,7 +112,7 @@ unsplashConfig:
   gravity: 'north' # north, east, south, west, center
   # greyscale: true
 
-avatar: http://7te9fe.com1.z0.glb.clouddn.com/default_avatar.jpg
+avatar: http://ReinhardHsu.com/images/ReinhardHsu.png
 
 # do not like fancybox, set this as false, this will turn it off
 fancybox: true

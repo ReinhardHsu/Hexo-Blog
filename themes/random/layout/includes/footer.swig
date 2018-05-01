@@ -28,6 +28,14 @@ var isTriggerAnalytics = !( {{ JSON.stringify(config.isIgnoreSpecialHostVisitor 
     <script src="{{ url_for(url) }}"></script>
   {% endfor %}
 {% endif %}
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async
+  src="https://cdn.bootcss.com/mathjax/2.6.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
 <script>
 {% if theme.fancybox || config.fancybox %}
   // fancybox
