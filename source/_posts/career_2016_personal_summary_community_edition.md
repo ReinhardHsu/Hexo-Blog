@@ -41,7 +41,7 @@ tags:
 
 2016年3月，上海
 
-![微软Dynamics论坛年会](https://images2015.cnblogs.com/blog/453825/201701/453825-20170120144724062-1807556451.jpg)
+![微软Dynamics论坛年会](https://ws1.sinaimg.cn/large/006tKfTcgy1fr1f8t4i28j30qo0zkgqc.jpg)
 
 在三月中旬的时候，收到微软的邀请。
 
@@ -55,7 +55,7 @@ tags:
 
 2016年7月，北京
 
-![Tableau可视化峰会](https://images2015.cnblogs.com/blog/453825/201701/453825-20170120144808640-1421690906.jpg)
+![Tableau可视化峰会](https://ws2.sinaimg.cn/large/006tKfTcgy1fr1f8ublytj31kw23vnpd.jpg)
 
 因为我们是Tableau的新客户，我们的Tableau客户经理王晶，让我们过去取取经，看看别的公司是怎么玩儿的。
 
@@ -67,7 +67,7 @@ tags:
 
 2016年11月，北京
 
-![体验微软的黑科技](https://images2015.cnblogs.com/blog/453825/201701/453825-20170120144836125-963886476.jpg)
+![体验微软的黑科技](https://ws1.sinaimg.cn/large/006tKfTcgy1fr1f8vn3exj31kw23v4qp.jpg)
 
 图中是我在大会现场体验微软的黑科技——Hololens。
 
@@ -79,7 +79,7 @@ tags:
 
 大会在国家会议中心举办，期间还有其他主题的会议，我利用午休时间，也顺带去看了看。在创业邦年会上，碰到一个小伙子让我印象很深。他跟我搭讪，介绍他的项目，原来他在大二休学，多家知名互联网初创公司的经验，现在开始创业。从他身上能够明显感受到一种紧迫感，和对成功的渴望。
 
-![善友](https://images2015.cnblogs.com/blog/453825/201701/453825-20170120144848906-1216072378.jpg)
+![善友](https://ws2.sinaimg.cn/large/006tKfTcgy1fr1f9360lqj31kw23v7wh.jpg)
 
 图中是我和大神的合影。DotNet圈子里的朋友应该都认识他。
 

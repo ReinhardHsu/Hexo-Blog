@@ -7,7 +7,7 @@ tags:
 - Microsoft Dynamics AX
 ---
 
-![img](https://images2015.cnblogs.com/blog/453825/201703/453825-20170322094632408-1459031889.png)
+![img](https://ws1.sinaimg.cn/large/006tKfTcgy1fr1f5g6a15j309w0cmjrv.jpg)
 
 今天[Reinhard](http://reinhardhsu.com/)在新环境做邮件广播测试时，发现无法发送邮件，并报以下错误：
 
@@ -25,7 +25,7 @@ tags:
 
 没有安装Telnet的可以在**Windows 功能**里添加。
 
-![img](https://images2015.cnblogs.com/blog/453825/201703/453825-20170322094649518-1604993611.png)
+![img](https://ws4.sinaimg.cn/large/006tKfTcgy1fr1f5hn640j30ll0fvjrv.jpg)
 
 在新环境的终端中，运行telnet，连接邮件服务器的地址和端口。
 

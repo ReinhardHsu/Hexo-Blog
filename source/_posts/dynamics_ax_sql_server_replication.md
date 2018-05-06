@@ -52,7 +52,7 @@ tags:
 
 ### 快照复制
 
-![img](https://images2015.cnblogs.com/blog/453825/201702/453825-20170206181041026-1218732503.jpg)
+![img](https://ws1.sinaimg.cn/large/006tKfTcgy1fr1f81x9w9g30880gzglw.gif)
 
 #### 特点
 
@@ -73,7 +73,7 @@ tags:
 
 ### 事务复制
 
-![img](https://images2015.cnblogs.com/blog/453825/201702/453825-20170206181050213-1859810466.jpg)
+![img](https://ws1.sinaimg.cn/large/006tKfTcgy1fr1f829y1eg309e0iaaaj.gif)
 
 #### 特点
 
@@ -100,7 +100,7 @@ tags:
 
 ### 合并复制
 
-![img](https://images2015.cnblogs.com/blog/453825/201702/453825-20170206181058182-1841974860.jpg)
+![img](https://ws1.sinaimg.cn/large/006tKfTcgy1fr1f837ujrg309t0emmxh.gif)
 
 #### 特点
 
