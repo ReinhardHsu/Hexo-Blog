@@ -8,7 +8,7 @@ tags:
 - SSIS
 ---
 
-[Reinhard](http://www.cnblogs.com/msdynax/p/cnblogs.com/msdynax) 在部署 SSIS 包时，提示如下错误。
+[Reinhard](http://reinhardhsu.com/p/cnblogs.com/msdynax) 在部署 SSIS 包时，提示如下错误。
 
 *由于错误 0xC0010014“发生了一个或多个错误。在此消息之前应有更为具体的错误消息，对这些错误进行详细说明。此消息用作遇到错误的函数的返回值。”，无法加载包。当 CPackage::LoadFromXML 失败时，会出现这种情况。*
 
@@ -25,7 +25,7 @@ tags:
 
 从网上的资料可以知道，应该是SSDT与SSIS的版本兼容问题。
 
-[Reinhard](http://www.cnblogs.com/msdynax/p/cnblogs.com/msdynax) 使用的是SQL Server 2016 提供的 [SQL Server Data Tools (16.5)](https://docs.microsoft.com/en-us/sql/ssdt/download-sql-server-data-tools-ssdt) ，而 SSIS 环境还是 SQL Server 2008 R2。从微软文档上得知，SSDT 16.5 开发的 SSIS 包，是不支持在 SSIS 2008 上部署的。
+[Reinhard](http://reinhardhsu.com/p/cnblogs.com/msdynax) 使用的是SQL Server 2016 提供的 [SQL Server Data Tools (16.5)](https://docs.microsoft.com/en-us/sql/ssdt/download-sql-server-data-tools-ssdt) ，而 SSIS 环境还是 SQL Server 2008 R2。从微软文档上得知，SSDT 16.5 开发的 SSIS 包，是不支持在 SSIS 2008 上部署的。
 
 ## SQL Server Data Tools (16.5) Supported SQL versions
 

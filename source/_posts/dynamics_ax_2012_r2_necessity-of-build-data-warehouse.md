@@ -10,7 +10,7 @@ tags:
 
 ## AX系统已有的BI分析架构
 
-对于AX 的BI分析架构，相信大家都了解，可以看[Reinhard](http://cnblogs.com/msdynax)之前的译文[[译\]Dynamics AX 2012 R2 BI系列-分析的架构](http://www.cnblogs.com/msdynax/p/4864332.html) 。
+对于AX 的BI分析架构，相信大家都了解，可以看[Reinhard](http://reinhardhsu.com/)之前的译文[[译\]Dynamics AX 2012 R2 BI系列-分析的架构](http://reinhardhsu.com/p/4864332.html) 。
 
 ![img](https://images2015.cnblogs.com/blog/453825/201510/453825-20151009162507706-1003974821.png)
 
@@ -20,7 +20,7 @@ tags:
 
 ### Dynamics 365技术架构的优势
 
-在新出的Dynamics 365里，提出了[Common Data Model](https://community.dynamics.com/crm/b/waynewaltonscrmblog/archive/2016/09/23/business-introduction-to-common-data-model)的概念，在一定程度上，从应用的底层解决了多系统数据整合的问题。[Reinhard](http://cnblogs.com/msdynax)在12月初的[微软技术大会](https://www.microsoft.com/china/ignite/2016/)上了解到，Dynamics 365 Operations除了Online版本外，On Premise版也在12月初有了销售版，感兴趣的同学可以关注下。
+在新出的Dynamics 365里，提出了[Common Data Model](https://community.dynamics.com/crm/b/waynewaltonscrmblog/archive/2016/09/23/business-introduction-to-common-data-model)的概念，在一定程度上，从应用的底层解决了多系统数据整合的问题。[Reinhard](http://reinhardhsu.com/)在12月初的[微软技术大会](https://www.microsoft.com/china/ignite/2016/)上了解到，Dynamics 365 Operations除了Online版本外，On Premise版也在12月初有了销售版，感兴趣的同学可以关注下。
 
 ![img](https://images2015.cnblogs.com/blog/453825/201612/453825-20161212112114042-1416242613.png)
 
@@ -92,4 +92,4 @@ AX系统中，反应的是每个商业交易的最新状态。不过有时也会
 
 随着软件发展的日新月异，计算机的硬件也越来越先进，仿佛OLAP Cube的优势也没那么明显了。近几年流行的敏捷BI工具，如Power BI、Tableau、Qlik等，就有意弱化了分析建模的过程。它们使用了内存数据库、列存储数据库等技术，来对数据进行缓存，加快了数据处理、渲染的速度，有时甚至可以直连生产环境且对生产环境性能的影响微乎其微。那么使用敏捷BI分析工具还需要建立数据仓库么？
 
-[Reinhard](http://cnblogs.com/msdynax)认为，**如果你的分析需要整合多个系统的数据，如果你要分析历史数据，如果你的业务系统的数据库无法满足查询和分析的性能需求，那么你仍然需要建立数据仓库。先对多个系统的数据进行整合、清洗，然后将清洗过的数据导入到企业级的数据仓库中，才能用于数据分析和展示**。
+[Reinhard](http://reinhardhsu.com/)认为，**如果你的分析需要整合多个系统的数据，如果你要分析历史数据，如果你的业务系统的数据库无法满足查询和分析的性能需求，那么你仍然需要建立数据仓库。先对多个系统的数据进行整合、清洗，然后将清洗过的数据导入到企业级的数据仓库中，才能用于数据分析和展示**。

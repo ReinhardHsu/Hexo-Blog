@@ -13,7 +13,7 @@ tags:
 - 距离计算
 - 概率计算
 
-今天[Reinhard Hsu](http://www.cnblogs.com/msdynax/)就来看看常见都有哪些常见的的距离计算。
+今天[Reinhard Hsu](http://reinhardhsu.com/)就来看看常见都有哪些常见的的距离计算。
 
 ## 欧式距离（Euclidean Metric）
 

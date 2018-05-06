@@ -8,11 +8,11 @@ tags:
 - Weekend Project
 ---
 
-今年[Reinhard Hsu](http://www.cnblogs.com/msdynax)觉得最有意思的事情，是参加了拍拍贷第二届魔镜杯互联网金融数据应用大赛。通过“富爸爸队”，认识了一群小伙伴，带领大家成功进入到复赛阶段，并打造了复赛阶段用户评分最高的分析类产品。详见[《祝贺富爸爸队的投资分析作品成功进入拍拍贷魔镜杯复赛阶段》](http://www.cnblogs.com/msdynax/p/8120229.html)。
+今年[Reinhard Hsu](http://reinhardhsu.com/)觉得最有意思的事情，是参加了拍拍贷第二届魔镜杯互联网金融数据应用大赛。通过“富爸爸队”，认识了一群小伙伴，带领大家成功进入到复赛阶段，并打造了复赛阶段用户评分最高的分析类产品。详见[《祝贺富爸爸队的投资分析作品成功进入拍拍贷魔镜杯复赛阶段》](http://reinhardhsu.com/p/8120229.html)。
 
-Prosper是美国的一家金融科技公司，[Reinhard Hsu](http://www.cnblogs.com/msdynax)在进入金融科技行业前就已经知道该公司，因为名字与[Reinhard Hsu](http://www.cnblogs.com/msdynax)之前的老东家非常相似，以至于Tableau的原厂顾问在一开始以为我的老东家与他的老客户Prosper是同一家公司。
+Prosper是美国的一家金融科技公司，[Reinhard Hsu](http://reinhardhsu.com/)在进入金融科技行业前就已经知道该公司，因为名字与[Reinhard Hsu](http://reinhardhsu.com/)之前的老东家非常相似，以至于Tableau的原厂顾问在一开始以为我的老东家与他的老客户Prosper是同一家公司。
 
-这次[Reinhard Hsu](http://www.cnblogs.com/msdynax)使用R语言对Prosper公开数据集的分析，看看Prosper风险评分的影响因素都有哪些。
+这次[Reinhard Hsu](http://reinhardhsu.com/)使用R语言对Prosper公开数据集的分析，看看Prosper风险评分的影响因素都有哪些。
 
 ## 主要指标的统计描述
 

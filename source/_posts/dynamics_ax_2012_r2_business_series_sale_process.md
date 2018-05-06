@@ -9,7 +9,7 @@ date: 2015-12-31 08:57:29
 
 [<span style="font-size: large;">![Image(5)](http://reinhardhsu.com/wp-content/uploads/2015/12/Image5_thumb.png "Image(5)")</span>](http://reinhardhsu.com/wp-content/uploads/2015/12/Image5.png)
 
-<span style="font-size: large;">    在博文</span>[<span style="font-size: large;">Dynamics AX R2 业务系列</span>](http://www.cnblogs.com/msdynax/p/4708147.html)<span style="font-size: large;">中，</span>[<span style="font-size: large;">Reinhard</span>](http://reinhardhsu.com/)<span style="font-size: large;">对这个系列做了一个规划，下面我们就按照规划开始说业务吧。</span>
+<span style="font-size: large;">    在博文</span>[<span style="font-size: large;">Dynamics AX R2 业务系列</span>](http://reinhardhsu.com/p/4708147.html)<span style="font-size: large;">中，</span>[<span style="font-size: large;">Reinhard</span>](http://reinhardhsu.com/)<span style="font-size: large;">对这个系列做了一个规划，下面我们就按照规划开始说业务吧。</span>
 
 ## 1、销售的主要职责
 

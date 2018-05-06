@@ -176,15 +176,15 @@ Microsoft Dynamics AX</th>
 1.  <span id="goog-gtc-unit-151" class="goog-gtc-unit"><span class="goog-gtc-translatable goog-gtc-from-mt" dir="ltr">第一个图片-显示了在表关系的属性，以及<span class="label">RelatedTableRole</span>财产的价值被突出显示。</span></span>
 2.  <span id="goog-gtc-unit-152" class="goog-gtc-unit"><span class="goog-gtc-translatable goog-gtc-from-mt" dir="ltr">第二个图片 &#8211; 显示了一个查询下一个数据源关系的性质。</span></span><span id="goog-gtc-unit-153" class="goog-gtc-unit"><span class="goog-gtc-translatable goog-gtc-from-mt" dir="ltr">我们看到，对于<span class="label">JoinRelation</span>属性的值是针对<span class="label">RelatedTableRole</span>值的副本。</span></span>
 
-<span class="label"><span id="goog-gtc-unit-154" class="goog-gtc-unit"><span class="goog-gtc-translatable goog-gtc-from-mt" dir="ltr">[![IC562597](http://msdynax.net/wp-content/uploads/2015/01/IC562597.png)](http://msdynax.net/wp-content/uploads/2015/01/IC562597.png)[
+<span class="label"><span id="goog-gtc-unit-154" class="goog-gtc-unit"><span class="goog-gtc-translatable goog-gtc-from-mt" dir="ltr">[![IC562597](http://reinhardhsu.com/wp-content/uploads/2015/01/IC562597.png)](http://reinhardhsu.com/wp-content/uploads/2015/01/IC562597.png)[
 
-](http://msdynax.net/wp-content/uploads/2015/01/IC562597.png) [
+](http://reinhardhsu.com/wp-content/uploads/2015/01/IC562597.png) [
 
-](http://msdynax.net/wp-content/uploads/2015/01/IC562598.png)在表上的相关属性RelatedTableRole</span></span></span>
+](http://reinhardhsu.com/wp-content/uploads/2015/01/IC562598.png)在表上的相关属性RelatedTableRole</span></span></span>
 
 <span id="goog-gtc-unit-155" class="goog-gtc-unit"><span class="goog-gtc-translatable goog-gtc-from-mt" dir="ltr">在接下来的图像，我们看到了<span class="label">JoinRelation</span>属性的值是值的<span class="label">RelatedTableRole</span>副本从以前的形象。</span></span>
 
-<span class="label"><span id="goog-gtc-unit-156" class="goog-gtc-unit"><span class="goog-gtc-translatable goog-gtc-from-mt" dir="ltr">[![IC562598](http://msdynax.net/wp-content/uploads/2015/01/IC562598.png)](http://msdynax.net/wp-content/uploads/2015/01/IC562598.png)在查询下一个关系的JoinRelation属性</span></span></span>
+<span class="label"><span id="goog-gtc-unit-156" class="goog-gtc-unit"><span class="goog-gtc-translatable goog-gtc-from-mt" dir="ltr">[![IC562598](http://reinhardhsu.com/wp-content/uploads/2015/01/IC562598.png)](http://reinhardhsu.com/wp-content/uploads/2015/01/IC562598.png)在查询下一个关系的JoinRelation属性</span></span></span>
 
 </div>
 </div>

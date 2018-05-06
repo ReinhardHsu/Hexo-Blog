@@ -9,11 +9,11 @@ tags:
 
 ![img](https://images2015.cnblogs.com/blog/453825/201703/453825-20170322094632408-1459031889.png)
 
-今天[Reinhard](http://www.cnblogs.com/msdynax)在新环境做邮件广播测试时，发现无法发送邮件，并报以下错误：
+今天[Reinhard](http://reinhardhsu.com/)在新环境做邮件广播测试时，发现无法发送邮件，并报以下错误：
 
 *类“CDO.Message”的 COM 对象中的方法“send”返回了错误代码 0x80040213 (<未知>)，此错误代码表示: 与服务器的传输连接失败。。*
 
-[Reinhard](http://www.cnblogs.com/msdynax)检查了**电子邮件参数**里的配置，与老环境中的配置一致，并没有问题。**电子邮件参数**和**邮件模板**配置方法可以参考[Reinhard](http://www.cnblogs.com/msdynax)之前的博文 [Dynamics AX 2012 R2 设置E-Mail](http://www.cnblogs.com/msdynax/p/set-up-e-mail-for-ax.html) 和 [Dynamics AX 2012 R2 配置E-Mail模板](http://www.cnblogs.com/msdynax/p/configuring-e-mail-template.html) 。
+[Reinhard](http://reinhardhsu.com/)检查了**电子邮件参数**里的配置，与老环境中的配置一致，并没有问题。**电子邮件参数**和**邮件模板**配置方法可以参考[Reinhard](http://reinhardhsu.com/)之前的博文 [Dynamics AX 2012 R2 设置E-Mail](http://reinhardhsu.com/p/set-up-e-mail-for-ax.html) 和 [Dynamics AX 2012 R2 配置E-Mail模板](http://reinhardhsu.com/p/configuring-e-mail-template.html) 。
 
 ## 问题排查
 
@@ -62,14 +62,14 @@ Microsoft Telnet> open mail.msdynax.net 25
 
 ### 其它影响因素
 
-既然相同的配置，在老环境里没问题，在新环境里报错，[Reinhard](http://www.cnblogs.com/msdynax)猜可能是以下几个地方出问题了：
+既然相同的配置，在老环境里没问题，在新环境里报错，[Reinhard](http://reinhardhsu.com/)猜可能是以下几个地方出问题了：
 
 - 防火墙
 - 域控策略
 - 邮件服务器对客户端做了IP限制
 
-[Reinhard](http://www.cnblogs.com/msdynax)对这几个部分逐一做了确认，没有发现任何限制。
+[Reinhard](http://reinhardhsu.com/)对这几个部分逐一做了确认，没有发现任何限制。
 
 ## 解决方法
 
-[Reinhard](http://www.cnblogs.com/msdynax)无奈之下，对新环境重新安装了操作系统。装完后再进行测试，已经可以连上邮件服务器了。
+[Reinhard](http://reinhardhsu.com/)无奈之下，对新环境重新安装了操作系统。装完后再进行测试，已经可以连上邮件服务器了。

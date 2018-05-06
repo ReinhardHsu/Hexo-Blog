@@ -8,7 +8,7 @@ date: 2015-08-28 17:38:50
 ---
 
 [<font size="3" face="微软雅黑">![Image](http://reinhardhsu.com/wp-content/uploads/2015/08/Image_thumb1.png "Image")</font>](http://reinhardhsu.com/wp-content/uploads/2015/08/Image1.png)
-<p><font size="3" face="微软雅黑">&nbsp;&nbsp;&nbsp; 在博文</font>[<font size="3" face="微软雅黑">Dynamics AX R2 业务系列</font>](http://www.cnblogs.com/msdynax/p/4708147.html)<font size="3" face="微软雅黑">中，</font>[<font size="3" face="微软雅黑">Reinhard</font>](http://reinhardhsu.com/)<font size="3" face="微软雅黑">对这个系列做了一个规划，下面我们就按照规划开始说业务吧。</font>
+<p><font size="3" face="微软雅黑">&nbsp;&nbsp;&nbsp; 在博文</font>[<font size="3" face="微软雅黑">Dynamics AX R2 业务系列</font>](http://reinhardhsu.com/p/4708147.html)<font size="3" face="微软雅黑">中，</font>[<font size="3" face="微软雅黑">Reinhard</font>](http://reinhardhsu.com/)<font size="3" face="微软雅黑">对这个系列做了一个规划，下面我们就按照规划开始说业务吧。</font>
 <p><font size="3" face="微软雅黑">&nbsp;&nbsp;&nbsp; 国际惯例，从采购开始。</font>
 
 ## <font size="4" face="微软雅黑">1、采购的主要职责</font>

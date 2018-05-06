@@ -8,11 +8,11 @@ tags:
 - Weekend Project
 ---
 
-最近[Reinhard](http://cnblogs.com/msdynax)看了部纪录片，叫 [安然：房间里最聪明的人](https://movie.douban.com/subject/2268042/) ，感到无比震惊。恰巧[Reinhard](http://cnblogs.com/msdynax)找到一份安然公司的数据，[Reinhard](http://cnblogs.com/msdynax)就从这些数据中，利用机器学习的相关知识，看看能不能找到欺诈的证据。
+最近[Reinhard](http://reinhardhsu.com/)看了部纪录片，叫 [安然：房间里最聪明的人](https://movie.douban.com/subject/2268042/) ，感到无比震惊。恰巧[Reinhard](http://reinhardhsu.com/)找到一份安然公司的数据，[Reinhard](http://reinhardhsu.com/)就从这些数据中，利用机器学习的相关知识，看看能不能找到欺诈的证据。
 
 ## 安然事件
 
-有些同学可能还不了解[安然事件](https://en.wikipedia.org/wiki/Enron)，这里[Reinhard](http://cnblogs.com/msdynax)先简要地讲讲。
+有些同学可能还不了解[安然事件](https://en.wikipedia.org/wiki/Enron)，这里[Reinhard](http://reinhardhsu.com/)先简要地讲讲。
 
 安然曾经是美国第七大企业，资产近七百亿美元，事发前股价曾一度达到到九十多美元。安然多年来通过设立空壳公司转移负债，海外假账，来操作自己的利润。通过人为断电，造成加州缺电的假象，抬高电价，谋取暴利。
 

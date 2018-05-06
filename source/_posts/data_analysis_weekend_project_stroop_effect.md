@@ -9,7 +9,7 @@ tags:
 date: 2016-10-22 21:07
 ---
 # 斯特鲁普效应(Stroop effect)
-[Reinhard](http://www.cnblogs.com/msdynax)得到了一份斯特鲁普效应试验的数据，我们来分析下，文字的颜色，是否会影响受试者的反应。  
+[Reinhard](http://reinhardhsu.com/)得到了一份斯特鲁普效应试验的数据，我们来分析下，文字的颜色，是否会影响受试者的反应。  
 这里先看看什么是斯特鲁普效应：
 >斯特鲁普效应(Stroop effect)是指在心理学中干扰对反应时间影响的实验。这是1935年实验心理学家史楚普（John Ridley Stroop）所提出的著名的发现之一，指出环境刺激物理的各项特征，如果相融，则会使辨识加速，反应时间缩短；但若互不相融，则会造成干扰，使反应时间拉长。例如当测试者被要求说出某个颜色和其字面意义不符的词语时，被测者往往会反应速度下降，出错率上升。  
 
@@ -87,6 +87,6 @@ $r^2=.74$
 关于均值差异的置信区间;95% CI=(-10.01,-5.91)
 ### 决策
 $t(23)=-8.04,P<.05,one-tailed$  
-根据t统计量和t临界值，[Reinhard](http://www.cnblogs.com/msdynax)认为结果有统计上的显著性。  
-因为P<0.05，所以[Reinhard](http://www.cnblogs.com/msdynax)拒绝零假设。  
+根据t统计量和t临界值，[Reinhard](http://reinhardhsu.com/)认为结果有统计上的显著性。  
+因为P<0.05，所以[Reinhard](http://reinhardhsu.com/)拒绝零假设。  
 试验证明在文字和颜色匹配时，受试者的反应时间比不匹配时更少。  

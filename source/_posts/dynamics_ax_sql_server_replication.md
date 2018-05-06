@@ -10,11 +10,11 @@ tags:
 
 ## 分析数据滞后
 
-在博文 [Dynamics AX 2012 在BI分析中建立数据仓库的必要性](http://www.cnblogs.com/msdynax/p/6163773.html) 里，[Reinhard](http://www.cnblogs.com/msdynax) 阐述了在 AX 的 BI 分析过程中，建立数据仓库的必要性。
+在博文 [Dynamics AX 2012 在BI分析中建立数据仓库的必要性](http://reinhardhsu.com/p/6163773.html) 里，[Reinhard](http://reinhardhsu.com/) 阐述了在 AX 的 BI 分析过程中，建立数据仓库的必要性。
 
 *数据仓库将分析的工作负载，从事务的工作负载中分离出来，让企业能够整合来自多个数据源的数据*。
 
-但是从 AX 数据库中抽取数据到数据仓库的时候，[Reinhard](http://www.cnblogs.com/msdynax) 发现耗时非常长。[Reinhard](http://www.cnblogs.com/msdynax) 认为主要有三个原因：
+但是从 AX 数据库中抽取数据到数据仓库的时候，[Reinhard](http://reinhardhsu.com/) 发现耗时非常长。[Reinhard](http://reinhardhsu.com/) 认为主要有三个原因：
 
 - 我们不敢贸然在AX生产环境的数据库层面做优化
 - 数据基数大
@@ -24,7 +24,7 @@ tags:
 
 ## SQL Server 复制
 
-有没有什么方案，能够实时地展示数据，又对正式环境的性能影响小呢？这就是 [Reinhard](http://www.cnblogs.com/msdynax) 在本文中要说的[SQL Server 复制](https://msdn.microsoft.com/en-us/library/ms151198.aspx)。
+有没有什么方案，能够实时地展示数据，又对正式环境的性能影响小呢？这就是 [Reinhard](http://reinhardhsu.com/) 在本文中要说的[SQL Server 复制](https://msdn.microsoft.com/en-us/library/ms151198.aspx)。
 
 [SQL Server 复制](https://msdn.microsoft.com/en-us/library/ms151198.aspx) 是一项非常成熟的技术，它主要应用在以下几个场景中：
 
@@ -32,7 +32,7 @@ tags:
 2. 合并数据。有多个门店，每个门店的数据库服务器都维护着自己的数据。总部需要将所有门店的数据合并到一起。
 3. 故障转移。
 
-[Reinhard](http://www.cnblogs.com/msdynax) 这里的应用场景其实就是负载转移。将所需的数据从生产库发布到只读的复制库中，然后在复制库上执行数据抽取作业，这样就将一部分工作负载，从事务的工作负载中分离出来。
+[Reinhard](http://reinhardhsu.com/) 这里的应用场景其实就是负载转移。将所需的数据从生产库发布到只读的复制库中，然后在复制库上执行数据抽取作业，这样就将一部分工作负载，从事务的工作负载中分离出来。
 
 ### 复制的类型
 
@@ -48,7 +48,7 @@ tags:
 - 订阅服务器上的数据是只读的，还是可以更新的
 - 涉及到的计算机的数量和位置
 
-[Reinhard](http://www.cnblogs.com/msdynax) 这里简单说说不同复制类型的特点，详细信息还请参考微软官方文档[SQL Server 复制](https://msdn.microsoft.com/en-us/library/ms151198.aspx) 。
+[Reinhard](http://reinhardhsu.com/) 这里简单说说不同复制类型的特点，详细信息还请参考微软官方文档[SQL Server 复制](https://msdn.microsoft.com/en-us/library/ms151198.aspx) 。
 
 ### 快照复制
 
@@ -145,4 +145,4 @@ tags:
 
 ## 总结
 
-从上面的对比中，[Reinhard](http://www.cnblogs.com/msdynax) 认为，事务复制更适合我们的应用场景。它能够在企业层构建可扩展、高可用、松耦合的集成生态系统。
+从上面的对比中，[Reinhard](http://reinhardhsu.com/) 认为，事务复制更适合我们的应用场景。它能够在企业层构建可扩展、高可用、松耦合的集成生态系统。

@@ -12,7 +12,7 @@ date: 2015-09-28 09:47:21
 
 > <p>_<font face="微软雅黑">部署因错误而被取消。在报表服务器上，验证：-SQL Server Reporting Services 服务是否正在运行。</font>_
 
-<font face="微软雅黑">&nbsp;&nbsp;&nbsp; 接着，[Reinhard](http://reinhardhsu.com)进入到AX中，检查系统的报表服务器配置是否正确。不知道怎么配置的同学可以查看[Reinhard](http://reinhardhsu.com)之前的博文 </font>[<font face="微软雅黑">Dynamics AX 2012 R2 配置报表服务器</font>](http://www.cnblogs.com/msdynax/p/set-up-report-server.html)<font face="微软雅黑">&nbsp; 。检查发现，报表服务器中的配置也正确。[Reinhard](http://reinhardhsu.com)点击了一下 验证设置 按钮，收到以下错误：</font>
+<font face="微软雅黑">&nbsp;&nbsp;&nbsp; 接着，[Reinhard](http://reinhardhsu.com)进入到AX中，检查系统的报表服务器配置是否正确。不知道怎么配置的同学可以查看[Reinhard](http://reinhardhsu.com)之前的博文 </font>[<font face="微软雅黑">Dynamics AX 2012 R2 配置报表服务器</font>](http://reinhardhsu.com/p/set-up-report-server.html)<font face="微软雅黑">&nbsp; 。检查发现，报表服务器中的配置也正确。[Reinhard](http://reinhardhsu.com)点击了一下 验证设置 按钮，收到以下错误：</font>
 <p><font face="微软雅黑">![124](http://reinhardhsu.com/wp-content/uploads/2015/09/124.jpg "124")</font>
 
 > <p>_<font face="微软雅黑">无法连接到位于MSDynAX的报表服务器http://MSDynAX/Reports。确保SQL Server Reporting Services 正确配置为与 Microsoft Dynamics AX 客户端中的报表服务器配置匹配。</font>_
