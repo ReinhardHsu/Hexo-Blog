@@ -13,8 +13,10 @@
       <ul class="index-nav-link">
         {% set menu = config.menu || theme.menu %}
         {% for key in Object.keys(menu)  %}
-          {% if menu[key] != '/'  %}
-            <li><a href="{{ url_for(menu[key]) }}">{{ key }}</a></li>
+          {% if menu[key] == '/'  %}
+              <li><a href="/">{{ key }}</a></li>
+            {% else %}
+              <li><a href="{{ url_for(menu[key]) }}">{{ key }}</a></li>
           {% endif %}
         {% endfor %}
       </ul>

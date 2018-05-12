@@ -21,7 +21,11 @@
           {% else %}
             <li>
           {% endif %}
-            <a href="{{ url_for(menu[key]) }}">{{ key }}</a>
+            {% if menu[key] == '/'  %}
+              <li><a href="/">{{ key }}</a></li>
+            {% else %}
+              <a href="{{ url_for(menu[key]) }}">{{ key }}</a>
+            {% endif %}
             {# <span>{{key}}</span> #}
           </li>
         {% endfor %}

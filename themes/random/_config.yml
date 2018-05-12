@@ -4,12 +4,13 @@ language: en
 
 # main menu navigation
 menu:
-  Home: http://reinhardhsu.com
+  Home: /
   Blog: http://www.cnblogs.com/msdynax
   Archives: archives
   Tags: tags
   Categories: categories
   About: about
+  Game: game.html
 
 social:
   GitHub: https://github.com/ReinhardHsu
@@ -20,7 +21,7 @@ social:
   LinkedIn: https://www.linkedin.com/in/ReinhardHsu
 
 # Google analytics
-google_analytics:
+google_analytics: UA-119133633-1
 # Baidu tongji
 baidu_analytics: 9ddaf4c58daefd4b2d98d95e643549b3
 # Disqus
