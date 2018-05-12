@@ -80,3 +80,6 @@ theme: random
 deploy:
   type: git
   repo: https://github.com/ReinhardHsu/reinhardhsu.github.io.git
+
+sitemap:
+    path: sitemap.xml

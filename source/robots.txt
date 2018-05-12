@@ -1,0 +1,13 @@
+User-agent: *
+Allow: /
+Allow: /archives/
+Allow: /categories/
+Allow: /about/
+Allow: /tags/
+
+Disallow: /css/
+Disallow: /images/
+Disallow: /js/
+Disallow: /wp-content/
+
+Sitemap: http://reinhardhsu.com/sitemap.xml
