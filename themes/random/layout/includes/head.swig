@@ -50,4 +50,22 @@
   {% if theme.stylesheets !== undefined && theme.stylesheets.length > 0 %}
   {{ css(theme.stylesheets) }}
   {% endif %}
+  
+  <script>
+// is trigger analytics / tongji script
+var isIgnoreHost = false;
+
+if(window && window.location && window.location.host) {
+  isIgnoreHost = {{ JSON.stringify(config.theme.ignoreHostList || theme.ignoreHostList) }}.some(function(address){
+    return 0 === window.location.host.indexOf(address);
+  });
+}
+
+var isTriggerAnalytics = !( {{ JSON.stringify(config.isIgnoreSpecialHostVisitor || theme.isIgnoreSpecialHostVisitor) }} && isIgnoreHost );
+
+</script>
+
+  {% if config.google_analytics || theme.google_analytics %}
+    {% include 'google-analytics.swig' %}
+  {% endif %}
 </head>
