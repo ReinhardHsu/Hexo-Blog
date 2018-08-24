@@ -157,14 +157,13 @@ $$
 
 先看下交叉熵关于权重的偏导
 $$
-\begin{eqnarray}
-  \frac{\partial C}{\partial w_j} & = & -\frac{1}{n} \sum_x \left(
+\frac{\partial C}{\partial w_j}  =  -\frac{1}{n} \sum_x \left(
     \frac{y }{\sigma(z)} -\frac{(1-y)}{1-\sigma(z)} \right)
-  \frac{\partial \sigma}{\partial w_j} \tag{58}\\
- & = & -\frac{1}{n} \sum_x \left( 
+  \frac{\partial \sigma}{\partial w_j} 
+  \\
+   =  -\frac{1}{n} \sum_x \left( 
     \frac{y}{\sigma(z)} 
-    -\frac{(1-y)}{1-\sigma(z)} \right)\sigma'(z) x_j.
-\tag{59}\end{eqnarray}
+    -\frac{(1-y)}{1-\sigma(z)} \right)\sigma'(z) x_j
 $$
 通分简化后
 $$
@@ -285,10 +284,9 @@ $$
 ### 学习速度不会衰退
 
 $$
-\begin{eqnarray}
-  \frac{\partial C}{\partial b^L_j} & = & a^L_j-y_j  \tag{81}\\
-  \frac{\partial C}{\partial w^L_{jk}} & = & a^{L-1}_k (a^L_j-y_j) 
-\tag{82}\end{eqnarray}
+  \frac{\partial C}{\partial b^L_j}  =  a^L_j-y_j  
+  \\
+  \frac{\partial C}{\partial w^L_{jk}}  =  a^{L-1}_k (a^L_j-y_j) 
 $$
 
 这些表达式确保我们不会遇到学习速度衰退的问题。
